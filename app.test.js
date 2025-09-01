@@ -8,6 +8,12 @@ describe("mock app", () => {
     expect(res.body).toEqual({ status: "ok" });
   });
 
+  it("GET /healthCheck2 returns ok", async () => {
+    const res = await request(app).get("/healthCheck2");
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ status: "ok", version: "2" });
+  });
+
   it("GET / returns greeting", async () => {
     const res = await request(app).get("/");
     expect(res.status).toBe(200);
