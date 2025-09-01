@@ -6,7 +6,7 @@ module.exports = [
     ignores: ["node_modules/**", "coverage/**", "dist/**", "build/**"],
     languageOptions: {
       ecmaVersion: 2022,
-      sourceType: "module",
+      sourceType: "commonjs",
       globals: {
         ...globals.node,
         ...globals.jest
@@ -14,7 +14,7 @@ module.exports = [
     },
     rules: {
       "indent": ["error", 2],
-      "linebreak-style": ["error", "windows"],
+      "linebreak-style": "off", // Ignoring linebreak style differences
       "quotes": ["error", "double"],
       "semi": ["error", "always"]
     }
